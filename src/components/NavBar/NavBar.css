@@ -1,0 +1,11 @@
+#navbar {
+  display: grid;
+  align-items: baseline;
+  gap: 2rem;
+}
+
+@media (min-width: 1025px) {
+  #navbar {
+    display: flex;
+  }
+}

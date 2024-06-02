@@ -1,0 +1,18 @@
+#profile {
+  display: grid;
+  gap: 1rem;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-radius: 25px;
+  & img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+  }
+  & button {
+    border: none;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    background-color: transparent;
+  }
+}
