@@ -6,17 +6,17 @@ import Loader from "./components/Loader/Loader";
 import { ArticleType } from "./types/Article";
 import NavBar from "./components/NavBar/NavBar";
 import useFetchArticlesStore from "./stores/articlesStore";
+import useViewStore, { Views } from "./stores/viewStore";
+import BookmarksList from "./components/Bookmarks/BookmarksList";
 
 function App() {
   const {
-    data,
     loading,
     error: fetchError,
     fetchData: fetchArticles,
   } = useFetchArticlesStore();
-
+  const { currentView, viewArticles } = useViewStore();
   const [currentCategory, setCurrentCategory] = useState("");
-  const [articles, setArticles] = useState<ArticleType[]>([]);
   const { isLoading: isAuthLoading } = useAuth0();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
       }`
     );
 
-    setArticles(filterArticles(data?.articles || []));
+    viewArticles();
   };
 
   const fetchCategoryData = async (category: string) => {
@@ -43,12 +43,10 @@ function App() {
       }${category && category.length > 0 ? `&category=${category}` : ""}`
     );
 
-    setArticles(filterArticles(data?.articles || []));
+    viewArticles();
   };
 
   const handleClickCategory = (e: any) => {
-    setArticles([]);
-
     setCurrentCategory(e.target.value);
     fetchCategoryData(e.target.value);
   };
@@ -60,7 +58,7 @@ function App() {
       }`
     );
 
-    setArticles(filterArticles(data?.articles || []));
+    viewArticles();
   };
 
   const content = () => {
@@ -73,8 +71,10 @@ function App() {
         <>
           {loading || isAuthLoading ? (
             <Loader />
+          ) : currentView === Views.ARTICLES ? (
+            <ArticleList />
           ) : (
-            <ArticleList articles={articles} />
+            <BookmarksList />
           )}
         </>
       );

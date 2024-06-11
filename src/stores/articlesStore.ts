@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 import type {} from "@redux-devtools/extension";
+import { ArticleType } from "../types/Article";
 
 interface StoreState {
   data: any | null;
@@ -8,6 +9,9 @@ interface StoreState {
   error: string | null;
   fetchData: (url: string) => Promise<void>;
 }
+
+const filterArticles = (articles: ArticleType[]) =>
+  articles.filter((article) => article.title !== "[Removed]");
 
 const useArticlesStore = create<StoreState>()(
   devtools(
@@ -24,7 +28,7 @@ const useArticlesStore = create<StoreState>()(
               throw new Error("Network response was not ok");
             }
             const data = await response.json();
-            set({ data, loading: false });
+            set({ data: filterArticles(data.articles), loading: false });
           } catch (error) {
             set({ error: (error as Error).message, loading: false });
           }
