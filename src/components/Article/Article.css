@@ -17,7 +17,6 @@
   display: grid;
   gap: 2rem;
   max-height: 100vh;
-  overflow-y: scroll;
 }
 
 .articles__featured--listing {
@@ -51,4 +50,11 @@
     padding: 1rem 0;
     border-bottom: 1px solid #000;
   }
+}
+
+#bookmark__button {
+  margin-top: 1rem;
+  padding: 0.25rem;
+  border: 1px solid #5a5a5a;
+  width: fit-content;
 }

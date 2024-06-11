@@ -1,14 +1,11 @@
-import React from "react";
 import FeaturedArticle from "./FeaturedArticle";
 import Article from "./Article";
 import "./Article.css";
 import { ArticleType } from "../../types/Article";
+import useArticlesStore from "../../stores/articlesStore";
 
-interface ArticleListProps {
-  articles: ArticleType[];
-}
-
-const ArticleList = ({ articles }: ArticleListProps) => {
+const ArticleList = () => {
+  const articles: ArticleType[] = useArticlesStore()?.data ?? [];
   const midwayPt = Math.ceil(articles.length / 2);
 
   const firstHalf = articles.slice(0, midwayPt);
