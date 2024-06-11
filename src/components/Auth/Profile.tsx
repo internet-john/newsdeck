@@ -2,8 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from "./Logout";
+import BookmarksButton from "../Bookmarks/BookmarksButton";
 import "./Profile.css";
-import Bookmarks from "../Bookmarks/Bookmarks";
 
 const Profile: React.FC = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -31,7 +31,7 @@ const Profile: React.FC = () => {
         <img src={user?.picture} alt={user?.name} />
         {isMenuVisible && (
           <div id="profile__dropdown">
-            <Bookmarks />
+            <BookmarksButton />
             <LogoutButton />
           </div>
         )}
