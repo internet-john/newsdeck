@@ -55,6 +55,10 @@
 #bookmark__button {
   margin-top: 1rem;
   padding: 0.25rem;
-  border: 1px solid #5a5a5a;
-  width: fit-content;
+  border: none;
+  background: transparent;
+}
+
+#listing__content {
+  display: block;
 }

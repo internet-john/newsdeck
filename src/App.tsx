@@ -23,9 +23,6 @@ function App() {
     fetchData();
   }, []);
 
-  const filterArticles = (articles: ArticleType[]) =>
-    articles.filter((article) => article.title !== "[Removed]");
-
   const fetchData = async () => {
     fetchArticles(
       `https://newsapi.org/v2/top-headlines?country=us&apiKey=${

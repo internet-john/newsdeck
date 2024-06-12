@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./Weather.css";
 import Loader from "../Loader/Loader";
 import useWeatherStore from "../../stores/weatherStore";
+import "./Weather.css";
 
 export const Weather: React.FC = () => {
   const { data, loading, error: fetchError, fetchData } = useWeatherStore();
