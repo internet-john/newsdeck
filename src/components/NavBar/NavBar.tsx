@@ -1,6 +1,7 @@
 import React from "react";
 import CategoryBar from "../Category/CategoryBar";
 import Search from "../Search/Search";
+import { Weather } from "../Weather/Weather";
 import "./NavBar.css";
 
 export interface NavBarComponentProps {
@@ -15,6 +16,8 @@ const NavBar: React.FC<NavBarComponentProps> = ({
   onClickCategory,
 }) => (
   <div id="navbar">
+    <Weather />
+
     <CategoryBar
       currentCategory={currentCategory}
       onClickCategory={onClickCategory}

@@ -1,14 +1,12 @@
 #header {
   display: grid;
   width: 100%;
-  & #top-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 5rem;
-    border-bottom: 1px solid #000;
-    padding-bottom: 1rem;
-    align-items: baseline;
-  }
+}
+
+#top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 #header__title {
@@ -17,8 +15,14 @@
 }
 
 #header__details {
+  padding: 2rem;
   font-size: initial;
   font-weight: initial;
   display: grid;
   justify-content: space-between;
+}
+
+#top-row,
+#header__details {
+  padding: 0 2rem;
 }
