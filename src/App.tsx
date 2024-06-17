@@ -3,7 +3,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Header from "./components/Header/Header";
 import ArticleList from "./components/Article/ArticleList";
 import Loader from "./components/Loader/Loader";
-import { ArticleType } from "./types/Article";
 import NavBar from "./components/NavBar/NavBar";
 import useFetchArticlesStore from "./stores/articlesStore";
 import useViewStore, { Views } from "./stores/viewStore";
