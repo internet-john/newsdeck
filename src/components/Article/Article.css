@@ -1,5 +1,6 @@
 #articles {
   width: 100%;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(20, 1fr);
 }
@@ -17,6 +18,7 @@
 #articles__featured {
   position: relative;
   grid-column: span 12;
+  overflow-y: scroll;
 
   & img {
     max-width: 100%;

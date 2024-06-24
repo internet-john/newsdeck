@@ -1,8 +1,10 @@
 #navbar {
   display: grid;
+  width: 100%;
   align-items: baseline;
   padding-bottom: 1rem;
   padding: 0 2rem;
+  border-bottom: 1px solid #000;
 }
 
 @media (min-width: 1025px) {
