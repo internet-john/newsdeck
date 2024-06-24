@@ -22,7 +22,6 @@ code {
     monospace;
 }
 
-#newsdeck,
-#newsdeck__content {
-  width: 100%;
+#newsdeck {
+  margin: 2rem 10rem;
 }
