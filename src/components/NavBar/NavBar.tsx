@@ -17,7 +17,6 @@ const NavBar: React.FC<NavBarComponentProps> = ({
 }) => (
   <div id="navbar">
     <Weather />
-
     <CategoryBar
       currentCategory={currentCategory}
       onClickCategory={onClickCategory}

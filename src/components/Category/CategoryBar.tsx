@@ -24,7 +24,7 @@ const CategoryBar: React.FC<CategoryBarProps> = ({
       {categories.map((category, idx) => (
         <li
           id={`category${
-            currentCategory.toString() === category ? "-active" : ""
+            currentCategory.toString() === category ? "--active" : ""
           }`}
           key={idx}
         >

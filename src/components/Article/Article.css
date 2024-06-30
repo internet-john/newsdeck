@@ -32,8 +32,9 @@
 
 .articles__featured--listing {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding-bottom: 1rem;
+  grid-template-columns: 6fr 4fr;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
 
   & #listing__title,
   #listing__description {

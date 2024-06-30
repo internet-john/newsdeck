@@ -87,7 +87,6 @@ function App() {
         currentCategory={currentCategory}
         onClickCategory={handleClickCategory}
       />
-      <hr />
       <div id="newsdeck__content">{content()}</div>
     </div>
   );
